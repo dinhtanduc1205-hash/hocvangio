@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dang ky CLB ngoai khoa</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            background-color: #a5d8dd;
+        }
+
+        .container {
+            width: 520px;
+            margin: 20px auto;
+            border: 2px solid blue;
+            padding: 20px;
+            background-color: #cfeef1;
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: inline-block;
+            width: 130px;
+            vertical-align: top;
+        }
+
+        input, textarea, select {
+            width: 260px;
+            padding: 5px;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        .submit {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 6px 20px;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+        function kiemTra() {
+            let hoten = document.getElementById("hoten").value;
+            let email = document.getElementById("email").value;
+            let ngaysinh = document.getElementById("ngaysinh").value;
+
+            if (hoten === "") {
+                alert("Vui long nhap ho ten!");
+                return false;
+            }
+            if (email === "") {
+                alert("Vui long nhap email!");
+                return false;
+            }
+            if (ngaysinh === "") {
+                alert("Vui long chon ngay sinh!");
+                return false;
+            }
+
+            alert("Dang ky thanh cong!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>
+        Dang ky thanh vien CLB ngoai khoa<br>
+        Truong THPT Phong Phu
+    </h2>
+
+    <form onsubmit="return kiemTra();">
+        <div class="row">
+            <label>Ho ten:</label>
+            <input type="text" id="hoten">
+        </div>
+
+        <div class="row">
+            <label>Email:</label>
+            <input type="email" id="email">
+        </div>
+
+        <div class="row">
+            <label>Ngay sinh:</label>
+            <input type="date" id="ngaysinh">
+        </div>
+
+        <div class="row">
+            <label>Dia chi:</label>
+            <textarea></textarea>
+        </div>
+
+        <div class="row">
+            <label>Gioi tinh:</label>
+            <input type="radio" name="gioitinh"> Nam
+            <input type="radio" name="gioitinh"> Nu
+        </div>
+
+        <div class="row">
+            <label>So thich:</label><br>
+            <input type="checkbox"> Co vua<br>
+            <input type="checkbox"> Tro choi dien tu<br>
+            <input type="checkbox"> Du lich<br>
+            <input type="checkbox"> Cam hoa<br>
+            <input type="checkbox"> Bong ro<br>
+            <input type="checkbox"> Pickleball<br>
+            <input type="checkbox"> Nau an
+        </div>
+
+        <div class="row">
+            <label>Ho so dinh kem:</label>
+            <input type="file">
+        </div>
+
+        <div class="row">
+            <label>Dang ky CLB:</label>
+            <select>
+                <option>Bong da</option>
+                <option>Bong chuyen</option>
+                <option>Am nhac</option>
+                <option>Tin hoc</option>
+                <option>Bong ro</option>
+                <option>Pickleball</option>
+            </select>
+        </div>
+
+        <div class="submit">
+            <button type="submit">Dang ky</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
