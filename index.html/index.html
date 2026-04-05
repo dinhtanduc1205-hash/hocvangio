@@ -1,151 +1,283 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Dang ky CLB ngoai khoa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma đạo thành công</title>
 
-    <style>
-        body {
-            font-family: "Times New Roman", serif;
-            background-color: #a5d8dd;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
 
-        .container {
-            width: 520px;
-            margin: 20px auto;
-            border: 2px solid blue;
-            padding: 20px;
-            background-color: #cfeef1;
-        }
+/* NỀN */
+body{
+    background: url("https://kenh14cdn.com/203336854389633024/2021/1/3/photo-1-16096337476961612322578.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+}
 
-        h2 {
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
+/* LỚP PHỦ */
+.overlay{
+    background: rgba(255,255,255,0.92);
+    min-height: 100vh;
+    display:flex;
+    flex-direction:column;
+}
 
-        .row {
-            margin-bottom: 12px;
-        }
+/* HEADER */
+header{
+    background: url("https://kenh14cdn.com/203336854389633024/2021/1/3/photo-1-16096337476961612322578.jpg") no-repeat center center;
+    background-size: cover;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+}
 
-        label {
-            display: inline-block;
-            width: 130px;
-            vertical-align: top;
-        }
+header::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.55);
+    z-index:0;
+}
 
-        input, textarea, select {
-            width: 260px;
-            padding: 5px;
-        }
+header *{
+    position:relative;
+    z-index:1;
+}
 
-        textarea {
-            height: 80px;
-        }
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
 
-        .submit {
-            text-align: center;
-            margin-top: 15px;
-        }
+.search-box input{
+    padding:10px;
+    width:280px;
+    border:none;
+    border-radius:20px;
+    outline:none;
+}
 
-        button {
-            padding: 6px 20px;
-            font-size: 16px;
-        }
-    </style>
+/* CONTENT */
+.content{
+    flex:1;
+    background:white;
+    margin:30px auto;
+    width:95%;
+    max-width:1200px;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-    <script>
-        function kiemTra() {
-            let hoten = document.getElementById("hoten").value;
-            let email = document.getElementById("email").value;
-            let ngaysinh = document.getElementById("ngaysinh").value;
+h1{
+    margin-bottom:10px;
+    color:#0d47a1;
+}
 
-            if (hoten === "") {
-                alert("Vui long nhap ho ten!");
-                return false;
-            }
-            if (email === "") {
-                alert("Vui long nhap email!");
-                return false;
-            }
-            if (ngaysinh === "") {
-                alert("Vui long chon ngay sinh!");
-                return false;
-            }
+h2{
+    margin-top:30px;
+    color:#1b5e20;
+}
 
-            alert("Dang ky thanh cong!");
-            return true;
-        }
-    </script>
+p{
+    margin-top:12px;
+    line-height:1.8;
+}
+
+.box{
+    background:#e3f2fd;
+    padding:15px;
+    border-left:5px solid #1b5e20;
+    margin-top:15px;
+    border-radius:8px;
+}
+
+/* ẢNH */
+img{
+    width:100%;
+    margin-top:15px;
+    border-radius:10px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    background:white;
+    padding:25px;
+    border-top:2px solid #ddd;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.contact a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:10px 0;
+    text-decoration:none;
+    color:#333;
+    padding:8px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.contact a:hover{
+    background:#f0f0f0;
+    transform:translateX(5px);
+}
+
+.icon{
+    width:25px;
+}
+
+/* FOOTER */
+footer{
+    background: url("https://kenh14cdn.com/203336854389633024/2021/1/3/photo-1-16096337476961612322578.jpg") no-repeat center center;
+    background-size: cover;
+    text-align:center;
+    padding:20px;
+    color:white;
+    font-weight:bold;
+    position:relative;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.55);
+    z-index:0;
+}
+
+footer span{
+    position:relative;
+    z-index:1;
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-    <h2>
-        Dang ky thanh vien CLB ngoai khoa<br>
-        Truong THPT Phong Phu
-    </h2>
+<div class="overlay">
 
-    <form onsubmit="return kiemTra();">
-        <div class="row">
-            <label>Ho ten:</label>
-            <input type="text" id="hoten">
-        </div>
+<header>
+    <div class="logo">♘ Mã đáo thành công</div>
+    <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm nội dung Ngữ Văn...">
+    </div>
+</header>
 
-        <div class="row">
-            <label>Email:</label>
-            <input type="email" id="email">
-        </div>
+<div class="content">
 
-        <div class="row">
-            <label>Ngay sinh:</label>
-            <input type="date" id="ngaysinh">
-        </div>
+    <h1>Phương pháp học Ngữ Văn hiệu quả cho học sinh lớp 12</h1>
 
-        <div class="row">
-            <label>Dia chi:</label>
-            <textarea></textarea>
-        </div>
+    <p>
+        Môn Ngữ văn là môn học quan trọng trong chương trình THPT và là môn thi bắt buộc 
+        trong kỳ thi tốt nghiệp THPT. Đây không chỉ là môn học để thi cử mà còn giúp học sinh 
+        phát triển tư duy, cảm thụ văn học và kỹ năng diễn đạt.
+    </p>
 
-        <div class="row">
-            <label>Gioi tinh:</label>
-            <input type="radio" name="gioitinh"> Nam
-            <input type="radio" name="gioitinh"> Nu
-        </div>
+    <div class="box">
+        👉 Bài nghiên cứu nhằm tìm ra phương pháp học Ngữ Văn hiệu quả.
+    </div>
 
-        <div class="row">
-            <label>So thich:</label><br>
-            <input type="checkbox"> Co vua<br>
-            <input type="checkbox"> Tro choi dien tu<br>
-            <input type="checkbox"> Du lich<br>
-            <input type="checkbox"> Cam hoa<br>
-            <input type="checkbox"> Bong ro<br>
-            <input type="checkbox"> Pickleball<br>
-            <input type="checkbox"> Nau an
-        </div>
+    <!-- PHẦN 1 -->
+    <h2>1. Lý do chọn đề tài</h2>
 
-        <div class="row">
-            <label>Ho so dinh kem:</label>
-            <input type="file">
-        </div>
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/book-1868068_1280.jpg">
 
-        <div class="row">
-            <label>Dang ky CLB:</label>
-            <select>
-                <option>Bong da</option>
-                <option>Bong chuyen</option>
-                <option>Am nhac</option>
-                <option>Tin hoc</option>
-                <option>Bong ro</option>
-                <option>Pickleball</option>
-            </select>
-        </div>
+    <p>
+        Nhiều học sinh gặp khó khăn khi học Ngữ văn do chưa có phương pháp học phù hợp. 
+        Một số em học thuộc máy móc, chưa biết cách phân tích và cảm thụ văn bản. 
+        Vì vậy cần tìm ra phương pháp học hiệu quả hơn.
+    </p>
 
-        <div class="submit">
-            <button type="submit">Dang ky</button>
+    <!-- PHẦN 2 -->
+    <h2>2. Mục tiêu nghiên cứu</h2>
+
+    <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg">
+
+    <p>
+        - Tìm hiểu thực trạng học Ngữ văn của học sinh lớp 12.<br>
+        - Khảo sát các phương pháp học hiện nay.<br>
+        - Phân tích ưu điểm và hạn chế của từng phương pháp.<br>
+        - Đề xuất phương pháp học hiệu quả hơn cho kỳ thi tốt nghiệp THPT.
+    </p>
+
+    <!-- PHẦN 3 -->
+    <h2>3. Câu hỏi nghiên cứu</h2>
+
+    <img src="https://cdn.pixabay.com/photo/2015/09/05/21/51/reading-925589_1280.jpg">
+
+    <p>
+        - Học sinh lớp 12 đang học Ngữ văn như thế nào?<br>
+        - Phương pháp nào được sử dụng phổ biến nhất?<br>
+        - Khó khăn lớn nhất khi học Ngữ văn là gì?<br>
+        - Làm sao để học Ngữ văn hiệu quả hơn?
+    </p>
+
+    <h2>📋 Tham gia khảo sát</h2>
+    <div class="box">
+        👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfV6nfFz7as30aIZEjikiG2xudV9t9-QYzblrSRHdW_NJ155Q/viewform?usp=dialog" target="_blank">
+            Nhấn vào đây để tham gia khảo sát
+        </a>
+    </div>
+
+</div>
+
+<div class="sidebar">
+
+    <div>
+        <h3>🔗 Liên hệ</h3>
+        <div class="contact">
+            <a href="https://www.youtube.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" class="icon">
+                YouTube
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon">
+                Facebook
+            </a>
+
+            <a href="#">
+                <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1788858322025414&get_thumbnail=1" class="icon">
+                THPT PP
+            </a>
         </div>
-    </form>
+    </div>
+
+    <div>
+        <h3>📌 Nội dung</h3>
+        <p>Giới thiệu</p>
+        <p>Lý do chọn đề tài</p>
+        <p>Mục tiêu nghiên cứu</p>
+        <p>Câu hỏi nghiên cứu</p>
+        <p>Khảo sát</p>
+    </div>
+
+</div>
+
+<footer>
+    <span>© 2026 - Website học Ngữ Văn</span>
+</footer>
+
 </div>
 
 </body>
